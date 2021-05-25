@@ -25,3 +25,7 @@ idf.py flash
 
 # Screen Shot   
 ![smb2-ls](https://user-images.githubusercontent.com/6020549/119461775-022c0b00-bd7b-11eb-900a-562c6a6ee70a.jpg)
+
+Windows Explorer   
+![smb2-ls-2](https://user-images.githubusercontent.com/6020549/119472171-f7767380-bd84-11eb-8774-bf0be60b5a1d.jpg)
+
