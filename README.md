@@ -40,25 +40,25 @@ Set the Maximum retry to avoid station reconnecting to the AP unlimited when the
 Username with shared folder permissions.
 - CONFIG_ESP_NEED_PASSWORD   
 Shared access requires password.
-- CONFIG_ESP_SMB_PASSWORD
+- CONFIG_ESP_SMB_PASSWORD   
 Password of Username.
-- CONFIG_ESP_SMB_HOST
+- CONFIG_ESP_SMB_HOST   
 IP address of shared host.mDMS name cannot be used.
-- CONFIG_ESP_SMB_PATH
+- CONFIG_ESP_SMB_PATH   
 Shared path name.
 
 ![config-main](https://user-images.githubusercontent.com/6020549/119461488-b5e0cb00-bd7a-11eb-8e7a-12e9a2859787.jpg)
 ![config-app](https://user-images.githubusercontent.com/6020549/119461477-b37e7100-bd7a-11eb-9167-7f7e1f65dd2d.jpg)
 
 # Examples
-- smb2-ls
+- smb2-ls   
  Shared directory file list
 
-- smb2-cat
+- smb2-cat   
  Read from a file in a shared directory
 
-- smb2-put
+- smb2-put   
  Write to a file in a shared directory
 
-- smb2_stat
+- smb2_stat   
  Obtain file information in a shared directory
