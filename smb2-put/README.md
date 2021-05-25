@@ -25,7 +25,7 @@ idf.py flash
 
 # How to use
 Build and run the farmware.   
-Create esp-idf-put.txt in a shared folder.   
+It will create esp-idf-put.txt in a shared folder.   
 ```
 This is Text# 0
 This is Text# 1

@@ -24,7 +24,7 @@ idf.py flash
 ```
 
 # How to use   
-Create esp-idf-cast.txt in the shared folder.   
+Create esp-idf-cat.txt in the shared folder.   
 The content does not matter.   
 It's mine.   
 ```
