@@ -43,7 +43,8 @@ Shared access requires password.
 - CONFIG_ESP_SMB_PASSWORD   
 Password of Username.
 - CONFIG_ESP_SMB_HOST   
-IP address of shared host.mDMS name cannot be used.
+IP address of shared host.   
+mDMS name cannot be used.   
 - CONFIG_ESP_SMB_PATH   
 Shared path name.
 
