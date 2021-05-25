@@ -36,4 +36,4 @@ bbbbbbbbbbbbbbbbb
 Build and run the farmware.
 
 # Screen Shot   
-![smb2-cat](https://user-images.githubusercontent.com/6020549/119462372-9bf3b800-bd7b-11eb-9eed-e3d961edcbb7.jpg)
+![smb2-cat](https://user-images.githubusercontent.com/6020549/119466565-b3cd3b00-bd7f-11eb-98fb-58220dcd494d.jpg)
