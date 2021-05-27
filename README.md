@@ -36,16 +36,16 @@ SSID (network name) to connect to.
 WiFi password (WPA or WPA2) to use.
 - CONFIG_ESP_MAXIMUM_RETRY   
 Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
-- CONFIG_ESP_SMB_USER   
+- CONFIG_SMB_USER   
 Username with shared folder permissions.
-- CONFIG_ESP_NEED_PASSWORD   
+- CONFIG_SMB_NEED_PASSWORD   
 Shared access requires password.
-- CONFIG_ESP_SMB_PASSWORD   
+- CONFIG_SMB_PASSWORD   
 Password of Username.
-- CONFIG_ESP_SMB_HOST   
+- CONFIG_SMB_HOST   
 IP address of shared host.   
 __mDMS name cannot be used.__   
-- CONFIG_ESP_SMB_PATH   
+- CONFIG_SMB_PATH   
 Shared path name.
 
 ![config-main](https://user-images.githubusercontent.com/6020549/119461488-b5e0cb00-bd7a-11eb-8e7a-12e9a2859787.jpg)
@@ -67,3 +67,6 @@ When a password is required to access the shared folder.
 
 - smb2_stat   
  Obtain file information in a shared directory
+
+- smb2_mkdir   
+ Create directory in a shared directory

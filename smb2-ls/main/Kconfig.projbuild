@@ -18,32 +18,32 @@ menu "Application Configuration"
 		help
 			Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
 
-	config ESP_SMB_USER
+	config SMB_USER
 		string "SMB Username"
 		default "smbuser"
 		help
 			Username with shared folder permissions.
 
-	config ESP_NEED_PASSWORD
+	config SMB_NEED_PASSWORD
 		bool "Shared access requires password"
 		help
 			Shared access requires password
 
-	config ESP_SMB_PASSWORD
-		depends on ESP_NEED_PASSWORD
+	config SMB_PASSWORD
+		depends on SMB_NEED_PASSWORD
 		string "SMB password"
 		default "smbpass"
 		help
 			Password of Username.
 
-	config ESP_SMB_HOST
+	config SMB_HOST
 		string "SMB Host"
 		default "192.168.10.10"
 		help
 			IP address of shared host.
 			mDMS name cannot be used.
 
-	config ESP_SMB_PATH
+	config SMB_PATH
 		string "SMB shared path"
 		default "path"
 		help

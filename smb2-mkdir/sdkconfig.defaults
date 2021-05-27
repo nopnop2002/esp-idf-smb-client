@@ -1,0 +1,5 @@
+#
+# ESP System Settings
+#
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+

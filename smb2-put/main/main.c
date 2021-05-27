@@ -157,16 +157,16 @@ void app_main(void)
 		while(1){ vTaskDelay(1); }
 	}
 
-	ESP_LOGI(TAG, "CONFIG_ESP_SMB_USER=[%s]",CONFIG_ESP_SMB_USER);
-	ESP_LOGI(TAG, "CONFIG_ESP_SMB_HOST=[%s]",CONFIG_ESP_SMB_HOST);
-	ESP_LOGI(TAG, "CONFIG_ESP_SMB_PATH=[%s]",CONFIG_ESP_SMB_PATH);
+	ESP_LOGI(TAG, "CONFIG_SMB_USER=[%s]",CONFIG_SMB_USER);
+	ESP_LOGI(TAG, "CONFIG_SMB_HOST=[%s]",CONFIG_SMB_HOST);
+	ESP_LOGI(TAG, "CONFIG_SMB_PATH=[%s]",CONFIG_SMB_PATH);
 	char smburl[64];
 	//strcpy(smburl, "smb://nop@192.168.10.50/share/esp-idf-put.txt");
-	sprintf(smburl, "smb://%s@%s/%s/esp-idf-put.txt", CONFIG_ESP_SMB_USER, CONFIG_ESP_SMB_HOST, CONFIG_ESP_SMB_PATH);
+	sprintf(smburl, "smb://%s@%s/%s/esp-idf-put.txt", CONFIG_SMB_USER, CONFIG_SMB_HOST, CONFIG_SMB_PATH);
 	ESP_LOGI(TAG, "smburl=%s", smburl);
 
-#if CONFIG_ESP_NEED_PASSWORD
-	smb2_set_password(smb2, CONFIG_ESP_SMB_PASSWORD);
+#if CONFIG_SMB_NEED_PASSWORD
+	smb2_set_password(smb2, CONFIG_SMB_PASSWORD);
 #endif
 
 	url = smb2_parse_url(smb2, smburl);

@@ -23,9 +23,6 @@
 #include "libsmb2.h"
 #include "libsmb2-raw.h"
 
-#define MAXBUF 64
-uint8_t buf[MAXBUF];
-uint32_t pos;
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t s_wifi_event_group;
@@ -150,7 +147,6 @@ void app_main(void)
 	struct smb2_context *smb2;
 	struct smb2_url *url;
 	struct smb2_stat_64 st;
-	time_t t;
 
 	smb2 = smb2_init_context();
 	if (smb2 == NULL) {
@@ -162,8 +158,10 @@ void app_main(void)
 	ESP_LOGI(TAG, "CONFIG_SMB_HOST=[%s]",CONFIG_SMB_HOST);
 	ESP_LOGI(TAG, "CONFIG_SMB_PATH=[%s]",CONFIG_SMB_PATH);
 	char smburl[64];
-	//strcpy(smburl, "smb://nop@192.168.10.50/share/esp-idf-stat");
-	sprintf(smburl, "smb://%s@%s/%s/esp-idf-stat", CONFIG_SMB_USER, CONFIG_SMB_HOST, CONFIG_SMB_PATH);
+	//strcpy(smburl, "smb://WORKGROUP;admin@192.168.10.114/disk1");
+	//strcpy(smburl, "smb://admin@192.168.10.114/disk1");
+	//strcpy(smburl, "smb://nop@192.168.10.50/share");
+	sprintf(smburl, "smb://%s@%s/%s/smb2-mkdir", CONFIG_SMB_USER, CONFIG_SMB_HOST, CONFIG_SMB_PATH);
 	ESP_LOGI(TAG, "smburl=%s", smburl);
 
 #if CONFIG_SMB_NEED_PASSWORD
@@ -183,35 +181,20 @@ void app_main(void)
 		while(1){ vTaskDelay(1); }
 	}
 
-
 	ESP_LOGI(TAG, "url->path=%s", url->path);
 	if (smb2_stat(smb2, url->path, &st) < 0) {
-		ESP_LOGE(TAG,"smb2_stat failed. %s", smb2_get_error(smb2));
-		while(1){ vTaskDelay(1); }
+		int rc = smb2_mkdir(smb2, url->path);
+		ESP_LOGD(TAG, "smb2_mkdir rc=%d", rc);
+		if (rc != 0) {
+			ESP_LOGE(TAG, "smb2_mkdir failed. %s", smb2_get_error(smb2));
+			while(1){ vTaskDelay(1); }
+		} else {
+			ESP_LOGI(TAG, "%s created", url->path);
+		}
+	} else {
+		ESP_LOGW(TAG, "%s already exist", url->path);
 	}
-	switch (st.smb2_type) {
-	case SMB2_TYPE_FILE:
-		printf("Type:FILE\n");
-		break;
-	case SMB2_TYPE_DIRECTORY:
-		printf("Type:DIRECTORY\n");
-		break;
-	default:
-		printf("Type:unknown\n");
-		break;
-	}
-	printf("Size:%"PRIu64"\n", st.smb2_size);
-	printf("Inode:0x%"PRIx64"\n", st.smb2_ino);
-	printf("Links:%"PRIu32"\n", st.smb2_nlink);
-	t = (time_t)st.smb2_atime;
-	printf("Atime:%s", asctime(localtime(&t)));
-	t = (time_t)st.smb2_mtime;
-	printf("Mtime:%s", asctime(localtime(&t)));
-	t = (time_t)st.smb2_ctime;
-	printf("Ctime:%s", asctime(localtime(&t)));
-	t = (time_t)st.smb2_btime;
-	printf("Btime:%s", asctime(localtime(&t)));
-				
+
 	smb2_disconnect_share(smb2);
 	smb2_destroy_url(url);
 	smb2_destroy_context(smb2);
