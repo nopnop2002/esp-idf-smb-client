@@ -68,5 +68,5 @@ When a password is required to access the shared folder.
 - smb2_stat   
  Obtain file information in a shared directory
 
-- smb2_mkdir   
+- smb2-mkdir   
  Create directory in a shared directory
