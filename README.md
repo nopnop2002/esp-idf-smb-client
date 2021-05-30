@@ -65,7 +65,7 @@ When a password is required to access the shared folder.
 - smb2-put   
  Write to a file in a shared directory
 
-- smb2_stat   
+- smb2-stat   
  Obtain file information in a shared directory
 
 - smb2-mkdir   
