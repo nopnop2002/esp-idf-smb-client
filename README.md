@@ -1,5 +1,6 @@
 # esp-idf-smb-client
 SMB client example for esp-idf.   
+"SMB (Server Message Block)" is a standard file sharing protocol in Windows networks.   
 You can access Windows shared folder from esp32.   
 This project use [SMB2/3 userspace client](https://github.com/sahlberg/libsmb2).
 
