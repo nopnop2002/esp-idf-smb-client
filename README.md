@@ -5,10 +5,10 @@ You can access Windows shared folder from esp32.
 This project use [SMB2/3 userspace client](https://github.com/sahlberg/libsmb2).
 
 # Software requirements
-esp-idf v4.4 or later.   
+esp-idf v4.3 or later.   
+
 
 # Installation for ESP32
-
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client/smb2-ls
@@ -19,7 +19,6 @@ idf.py flash
 ```
 
 # Installation for ESP32-S2
-
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client/smb2-ls
@@ -27,6 +26,19 @@ git clone https://github.com/sahlberg/libsmb2 components/libsmb2
 idf.py set-target esp32s2
 idf.py menuconfig
 idf.py flash
+```
+
+# Installation for esp-idf v4.4 or later.   
+The following function names have changed in esp-idf v4.4:   
+MD5Init --> esp_rom_md5_init   
+MD5Update --> esp_rom_md5_update   
+MD5Final --> esp_rom_md5_final   
+
+Therefore, it is necessary to add the following to the end of components/libsmb2/include/esp/config.h.   
+```
+#define MD5Init esp_rom_md5_init
+#define MD5Update esp_rom_md5_update
+#define MD5Final esp_rom_md5_final
 ```
 
 # Configuration   
