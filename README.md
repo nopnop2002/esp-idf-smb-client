@@ -39,10 +39,10 @@ IP address or mDNS of shared host.
 Shared path name.
 
 ![config-main](https://user-images.githubusercontent.com/6020549/119461488-b5e0cb00-bd7a-11eb-8e7a-12e9a2859787.jpg)
-![config-app](https://user-images.githubusercontent.com/6020549/119461477-b37e7100-bd7a-11eb-9167-7f7e1f65dd2d.jpg)
+![config-app-1](https://user-images.githubusercontent.com/6020549/169681869-234719cf-d043-467f-a339-abf0c2ac7eb6.jpg)
 
 When a password is required to access the shared folder.
-![config-password](https://user-images.githubusercontent.com/6020549/119465484-ab283500-bd7e-11eb-8b3f-2c8ecf9443bb.jpg)
+![config-app-2](https://user-images.githubusercontent.com/6020549/169681877-ce4da211-bc92-4546-995c-cc16bb65ba51.jpg)
 
 
 # Examples
