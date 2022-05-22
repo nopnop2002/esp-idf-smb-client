@@ -1,24 +1,14 @@
 # smb2-ls   
 Shared directory file list
 
-# Installation for ESP32
+# Installation
 
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
-cd esp-idf-smb-client/smb2-ls
+cd esp-idf-smb-client
 git clone https://github.com/sahlberg/libsmb2 components/libsmb2
-idf.py set-target esp32
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-S2
-
-```
-git clone https://github.com/nopnop2002/esp-idf-smb-client
-cd esp-idf-smb-client/smb2-ls
-git clone https://github.com/sahlberg/libsmb2 components/libsmb2
-idf.py set-target esp32s2
+cd smb2-ls
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
 idf.py menuconfig
 idf.py flash
 ```
