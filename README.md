@@ -30,7 +30,7 @@ vi components/libsmb2/lib/smb3-seal.c
 #ifdef ESP_PLATFORM
 #include <esp_system.h>
 #include <sys/types.h>
-#include <esp_random.h> ---> Add this
+#include <esp_random.h> ---> __Add this__
 #define random esp_random
 #endif
 ---------------------------------------------------------------
