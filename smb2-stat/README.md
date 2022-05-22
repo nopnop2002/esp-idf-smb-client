@@ -1,24 +1,14 @@
 # smb2-stat   
 Obtain file information in a shared directory
 
-# Installation for ESP32
+# Installation
 
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
-cd esp-idf-smb-client/smb2-stat
+cd esp-idf-smb-client
 git clone https://github.com/sahlberg/libsmb2 components/libsmb2
-idf.py set-target esp32
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-S2
-
-```
-git clone https://github.com/nopnop2002/esp-idf-smb-client
-cd esp-idf-smb-client/smb2-stat
-git clone https://github.com/sahlberg/libsmb2 components/libsmb2
-idf.py set-target esp32s2
+cd smb2-stat
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
 idf.py menuconfig
 idf.py flash
 ```
