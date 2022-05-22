@@ -38,10 +38,9 @@ menu "Application Configuration"
 
 	config SMB_HOST
 		string "SMB Host"
-		default "192.168.10.10"
+		default "smbhost.local"
 		help
-			IP address of shared host.
-			mDMS name cannot be used.
+			IP address or mDNS of shared host.
 
 	config SMB_PATH
 		string "SMB shared path"
