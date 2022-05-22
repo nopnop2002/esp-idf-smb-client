@@ -8,11 +8,33 @@ This project use [SMB2/3 userspace client](https://github.com/sahlberg/libsmb2).
 esp-idf v4.4 or later.   
 This is because this version supports ESP32-C3.   
 
-# Installation
+# Installation for ESP-IDF v4.4
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
 git clone https://github.com/sahlberg/libsmb2 components/libsmb2
+cd smb2-ls
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
+idf.py menuconfig
+idf.py flash
+```
+
+# Installation for ESP-IDF v5.0
+```
+git clone https://github.com/nopnop2002/esp-idf-smb-client
+cd esp-idf-smb-client
+git clone https://github.com/sahlberg/libsmb2 components/libsmb2
+vi components/libsmb2/lib/smb3-seal.c
+
+---------------------------------------------------------------
+#ifdef ESP_PLATFORM
+#include <esp_system.h>
+#include <sys/types.h>
+#include <esp_random.h> ---> Add this
+#define random esp_random
+#endif
+---------------------------------------------------------------
+
 cd smb2-ls
 idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
 idf.py menuconfig
