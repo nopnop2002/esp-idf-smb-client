@@ -31,9 +31,9 @@ static EventGroupHandle_t s_wifi_event_group;
  * - we are connected to the AP with an IP
  * - we failed to connect after the maximum amount of retries */
 #define WIFI_CONNECTED_BIT BIT0
-#define WIFI_FAIL_BIT	   BIT1
+#define WIFI_FAIL_BIT BIT1
 
-static const char *TAG = "wifi station";
+static const char *TAG = "main";
 
 static int s_retry_num = 0;
 
@@ -74,15 +74,15 @@ void wifi_init_sta(void)
 	esp_event_handler_instance_t instance_any_id;
 	esp_event_handler_instance_t instance_got_ip;
 	ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
-														ESP_EVENT_ANY_ID,
-														&event_handler,
-														NULL,
-														&instance_any_id));
+					ESP_EVENT_ANY_ID,
+					&event_handler,
+					NULL,
+					&instance_any_id));
 	ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
-														IP_EVENT_STA_GOT_IP,
-														&event_handler,
-														NULL,
-														&instance_got_ip));
+					IP_EVENT_STA_GOT_IP,
+					&event_handler,
+					NULL,
+					&instance_got_ip));
 
 	wifi_config_t wifi_config = {
 		.sta = {
@@ -91,7 +91,7 @@ void wifi_init_sta(void)
 			/* Setting a password implies station will connect to all security modes including WEP/WPA.
 			 * However these modes are deprecated and not advisable to be used. Incase your Access point
 			 * doesn't support WPA2, these mode can be enabled by commenting below line */
-		 .threshold.authmode = WIFI_AUTH_WPA2_PSK,
+			.threshold.authmode = WIFI_AUTH_WPA2_PSK,
 
 			.pmf_cfg = {
 				.capable = true,
@@ -116,11 +116,9 @@ void wifi_init_sta(void)
 	/* xEventGroupWaitBits() returns the bits before the call returned, hence we can test which event actually
 	 * happened. */
 	if (bits & WIFI_CONNECTED_BIT) {
-		ESP_LOGI(TAG, "connected to ap SSID:%s",
-				 CONFIG_ESP_WIFI_SSID);
+		ESP_LOGI(TAG, "connected to ap SSID:%s", CONFIG_ESP_WIFI_SSID);
 	} else if (bits & WIFI_FAIL_BIT) {
-		ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s",
-				 CONFIG_ESP_WIFI_SSID, CONFIG_ESP_WIFI_PASSWORD);
+		ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s", CONFIG_ESP_WIFI_SSID, CONFIG_ESP_WIFI_PASSWORD);
 	} else {
 		ESP_LOGE(TAG, "UNEXPECTED EVENT");
 	}
