@@ -53,9 +53,9 @@ Username with shared folder permissions.
 - CONFIG_SMB_NEED_PASSWORD   
 Shared access requires password.
 - CONFIG_SMB_PASSWORD   
-Password of Username.
+Password with shared folder permissions.
 - CONFIG_SMB_HOST   
-IP address or mDNS of shared host.   
+IP address or mDNS host name of shared host.   
 - CONFIG_SMB_PATH   
 Shared path name.
 
