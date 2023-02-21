@@ -81,3 +81,18 @@ When a password is required to access the shared folder.
 
 - smb2-mkdir   
  Create directory in a shared directory
+
+
+# smbclient
+You can check the SMB services provided by the host below.   
+```
+$ smbclient -L LANDISK-HDL-AA1.local -U admin
+Enter WORKGROUP\admin's password:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        LAN DISK Log    Disk      HDL-AA Share for Log files
+        disk1           Disk      HDL-AA RAID share
+        IPC$            IPC       IPC Service (HDL-AA series)
+SMB1 disabled -- no workgroup available
+```
