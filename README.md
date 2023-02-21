@@ -84,7 +84,7 @@ When a password is required to access the shared folder.
 
 
 # smbclient
-You can check the SMB services provided by the host below.   
+You can check the services provided by the host using smbclient.   
 ```
 $ smbclient -L LANDISK-HDL-AA1.local -U admin
 Enter WORKGROUP\admin's password:
