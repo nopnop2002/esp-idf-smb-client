@@ -65,6 +65,10 @@ Shared path name.
 When a password is required to access the shared folder.
 ![config-app-2](https://user-images.githubusercontent.com/6020549/169681877-ce4da211-bc92-4546-995c-cc16bb65ba51.jpg)
 
+Specify the SMB Host in one of the following formats.   
+- IP address like 192.168.10.120   
+- mDNS hostname like smbhost.local   
+![config-app3](https://user-images.githubusercontent.com/6020549/220567598-abde2ecd-32fb-4d39-a53f-9a9b23f22078.jpg)
 
 # Examples
 - smb2-ls   
