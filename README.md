@@ -62,12 +62,14 @@ Shared path name.
 ![config-main](https://user-images.githubusercontent.com/6020549/119461488-b5e0cb00-bd7a-11eb-8e7a-12e9a2859787.jpg)
 ![config-app-1](https://user-images.githubusercontent.com/6020549/169681869-234719cf-d043-467f-a339-abf0c2ac7eb6.jpg)
 
-When a password is required to access the shared folder.
+When a password is required to access the shared folder.   
+
 ![config-app-2](https://user-images.githubusercontent.com/6020549/169681877-ce4da211-bc92-4546-995c-cc16bb65ba51.jpg)
 
 Specify the SMB Host in one of the following formats.   
 - IP address like 192.168.10.120   
 - mDNS hostname like smbhost.local   
+
 ![config-app3](https://user-images.githubusercontent.com/6020549/220567598-abde2ecd-32fb-4d39-a53f-9a9b23f22078.jpg)
 
 # Examples
