@@ -24,7 +24,7 @@ idf.py flash
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
-git clone -b v4.0.0 https://github.com/sahlberg/libsmb2 components/libsmb2
+git clone https://github.com/sahlberg/libsmb2 components/libsmb2
 vi components/libsmb2/lib/smb3-seal.c
 
 ---------------------------------------------------------------
