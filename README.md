@@ -24,7 +24,17 @@ idf.py flash
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
-git clone https://github.com/sahlberg/libsmb2 components/libsmb2
+git clone -b v4.0.0 https://github.com/sahlberg/libsmb2 components/libsmb2
+vi components/libsmb2/lib/smb3-seal.c
+
+---------------------------------------------------------------
+#ifdef ESP_PLATFORM
+#include <esp_system.h>
+#include <sys/types.h>
+//#define random esp_random ---> Remove this
+#endif
+---------------------------------------------------------------
+
 cd smb2-ls
 idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
