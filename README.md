@@ -9,32 +9,11 @@ ESP-IDF V4.4/V5.x.
 ESP-IDF V5.0 is required when using ESP32-C2.   
 ESP-IDF V5.1 is required when using ESP32-C6.   
 
-# Installation for ESP-IDF v4.4
+# Installation
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
-git clone -b v4.0.0 https://github.com/sahlberg/libsmb2 components/libsmb2
-cd smb2-ls
-idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP-IDF v5.x
-```
-git clone https://github.com/nopnop2002/esp-idf-smb-client
-cd esp-idf-smb-client
-git clone -b v4.0.0 https://github.com/sahlberg/libsmb2 components/libsmb2
-vi components/libsmb2/lib/smb3-seal.c
-
----------------------------------------------------------------
-#ifdef ESP_PLATFORM
-#include <esp_system.h>
-#include <sys/types.h>
-//#define random esp_random ---> Remove this
-#endif
----------------------------------------------------------------
-
+git clone https://github.com/sahlberg/libsmb2 components/libsmb2
 cd smb2-ls
 idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
