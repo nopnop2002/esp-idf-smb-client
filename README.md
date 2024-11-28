@@ -14,6 +14,7 @@ ESP-IDF V5.1 is required when using ESP32-C6.
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
 git clone https://github.com/sahlberg/libsmb2 components/libsmb2
+cp esp-idf/CMakeLists.txt components/libsmb2/
 cd smb2-ls
 idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
