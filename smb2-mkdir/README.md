@@ -6,7 +6,7 @@ Create directory in a shared directory
 ```
 git clone https://github.com/nopnop2002/esp-idf-smb-client
 cd esp-idf-smb-client
-git clone https://github.com/sahlberg/libsmb2 -b libsmb2-6.1 components/libsmb2
+git clone https://github.com/sahlberg/libsmb2 -b libsmb2-6.2 components/libsmb2
 cp esp-idf/CMakeLists.txt components/libsmb2/
 cd smb2-mkdir
 idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
