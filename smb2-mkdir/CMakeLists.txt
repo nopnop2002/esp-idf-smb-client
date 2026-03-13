@@ -8,4 +8,5 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(smb2-mkdir)
 
 idf_build_set_property(COMPILE_OPTIONS "-Wno-array-parameter" APPEND)
-
+idf_build_set_property(COMPILE_OPTIONS "-Wno-error=type-limits" APPEND)
+idf_build_set_property(COMPILE_OPTIONS "-Wno-error=implicit-fallthrough" APPEND)
